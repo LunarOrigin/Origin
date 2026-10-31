@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIGIN - AI Detection</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b0d12;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 25px 8%;
+  border-bottom: 1px solid #252a35;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.version {
+  color: #8b93a5;
+  font-size: 12px;
+}
+
+main {
+  max-width: 850px;
+  margin: 90px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 38px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #929bad;
+  line-height: 1.7;
+}
+
+.upload {
+  margin-top: 45px;
+  padding: 55px 20px;
+  border: 2px dashed #414c61;
+  border-radius: 16px;
+  background: #121722;
+}
+
+.upload h2 {
+  font-size: 21px;
+}
+
+.upload p {
+  color: #929bad;
+}
+
+button {
+  background: #ffffff;
+  color: #10131a;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+#result {
+  margin-top: 25px;
+  color: #aeb8ca;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  color: #687286;
+  padding: 30px;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ORIGIN</div>
+  <div class="version">OPEN SOURCE</div>
+</header>
+
+<main>
+
+  <h1>Discover the origin.</h1>
+
+  <p class="subtitle">
+    Human creation or Artificial Intelligence?<br>
+    Analyze digital content and investigate its origin.
+  </p>
+
+  <section class="upload">
+    <h2>Analyze your content</h2>
+
+    <p>Import an image or a video to begin.</p>
+
+    <input type="file" id="file"
+      accept="image/*,video/*">
+
+    <button onclick="document.getElementById('file').click()">
+      SELECT A FILE
+    </button>
+
+    <div id="result">
+      No file selected.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  ORIGIN — Open Source Project
+  <br><br>
+  Digital authenticity research
+</footer>
+
+<script>
+const fileInput = document.getElementById("file");
+const result = document.getElementById("result");
+
+fileInput.addEventListener("change", function() {
+  const file = this.files[0];
+
+  if (!file) return;
+
+  result.textContent =
+    "File imported: " + file.name +
+    " — Ready for future analysis.";
+});
+</script>
+
+</body>
+</html>
